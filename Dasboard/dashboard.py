@@ -30,9 +30,9 @@ if not daily_data.empty:
     # Cuaca lebih detail
     weather_map = {1: "Cerah", 2: "Berkabut", 3: "Hujan Ringan", 4: "Hujan Lebat"}
     weather = weather_map.get(daily_data['weathersit'].values[0], "Tidak Diketahui")
-    temperature = round(daily_data['temp'].values[0] * 41, 1)  # Normalisasi suhu
-    humidity = round(daily_data['hum'].values[0] * 100, 1)  # Kelembaban dalam %
-    windspeed = round(daily_data['windspeed'].values[0] * 67, 1)  # Normalisasi kecepatan angin
+    temperature = round(daily_data['temp'].values[0] * 41, 1)  
+    humidity = round(daily_data['hum'].values[0] * 100, 1)  
+    windspeed = round(daily_data['windspeed'].values[0] * 67, 1)  
 
     col2.metric("Kondisi Cuaca", weather)
     st.info(f" Suhu: {temperature}°C  |  Kelembaban: {humidity}%  |  Angin: {windspeed} km/jam")
